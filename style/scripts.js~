@@ -5,6 +5,9 @@ $(document).ready(function() {
 	if(isMobile) {
 		$("#mobile_test").show();
 		$("#mod_butt").removeAttr("data-toggle");
+		$("#mod_butt").click(function() {
+			$("#hey_there_everyone").show();
+		});
 	}
 		
 
