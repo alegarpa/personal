@@ -1,0 +1,48 @@
+body {
+	font-weight: 300;
+	font-size: 0.95rem;
+	background-color: #eeeeee;
+	}
+
+
+ul {
+    list-style-type: none;
+    margin: auto;
+    
+} 
+
+.nav { 
+	background-color: #FF33FF;
+	color: #080808;
+	background-image: none;
+}
+
+.nav > li > a {
+	color: #080808;
+}
+
+.container-fluid {
+	background-color: #FF33FF;
+	color: #080808;
+	background-image: none;
+}
+
+.container-fluid > li > a {
+	color: #080808;
+}
+
+h3#foot_head {
+	margin: auto;
+	width: 50%;
+}
+
+li {
+    display: inline;
+}
+
+.footer {
+	margin: auto;
+	padding: 10px;
+	width: 40%;
+}
+
