@@ -5,30 +5,120 @@ body {
 	}
 
 
-ul {
+img {
+	width: 640px;
+	height: 480px;
+}
+
+ul#social-life {
     list-style-type: none;
     margin: auto;
     
 } 
 
-.nav { 
-	background-color: #FF33FF;
-	color: #080808;
-	background-image: none;
+ul#progress-list {
+	list-style-type: none;
+	margin: auto;
+	
 }
 
-.nav > li > a {
-	color: #080808;
+.progress-square {
+	display: inline-block;
+	border: solid #2196F3 0px;
+	width: 5%;
+	height: 2.5%;
+	background-color: #2196F3;
 }
 
-.container-fluid {
-	background-color: #FF33FF;
-	color: #080808;
-	background-image: none;
+.progress-square:hover {
+	background-color: #3333FF;
 }
 
-.container-fluid > li > a {
-	color: #080808;
+.tutorial-list {
+	border: solid black 1px;
+	display: none;
+	width: 5%;
+	z-index: 99999;
+	padding: 10px;
+	margin: 0px
+}
+
+.progress-square .currBlock {
+	background-color: #FFCC00;
+}
+
+.progress-square .currBlock:hover {
+	background-color: #FF9900;
+}
+
+
+
+div#pop1 {
+}
+.modalDialog {
+
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	overflow: auto;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	
+	width: 50%;
+	position: relative;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #00d9ff; }
+
+.hideable {
+	display: none;
+}
+
+
+div#squared{
+	border: solid black 10px;
+	width: 50px;
+	height: 50px;
 }
 
 h3#foot_head {
@@ -36,7 +126,7 @@ h3#foot_head {
 	width: 50%;
 }
 
-li {
+li#social-life {
     display: inline;
 }
 

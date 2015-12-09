@@ -9,6 +9,7 @@
   <title>Alejandro Garcia</title>
 
   <link rel="stylesheet" href="style/mystyle.css" >
+  <link rel="stylesheet" href="style/jquery-ui.css" >
  
   <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
  
@@ -25,12 +26,14 @@
 
 
 
-</head>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="style/scripts.js"></script>
+
+    </head>
 
 <body>
 <nav class="navbar navbar-default">
@@ -66,15 +69,125 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+  <div id="my-intro">
+
+  <h2> Who am I? </h2>
   <p> This is still under construction as you'll probably notice from all the dead-links at the top of the navbar but I am having fun with this. It just feels oddly narcissistic but hopefully I'll get over that. At the end of the day if I want a job I need to sell myself. And probably get over my infatuation with hotpink. </p>
+
+  <p> My name is Alejandro Garcia-Paredes and I was born and raised in Victorville, CA.  It's a lot different than the Bay area in that there isn't a lot of water and a lot of people live there because it's cheap.  There isn't much to the town just people trying to scrape by.  Oddly enough in my years there I did witness white flight happen first hand and I came to the realization that every race is racist not just white people, but that's another issue for another time.  
+  </p>
+  <p>
+  I graduated from the University of California Berkeley this past August with a degree with Computer Science.  It came with a lot of fighting and I wasn't always sure I was going to finish but I hate quitting and I really wasn't going to let an operating systems class or a compilers class come between me and graduating college. My parents never finished High School and I always had to work 15 hours a week during school, but at the end of the day I figured if I didn't make it those would be excuses and why push yourself so hard without getting a result.  It was a enjoyable experience and I really appreciate being pushed and meeting so many intelligent people, I definetly wouldn't have gotten that back home. I like making programs and I love problem solving, and now that I have time to make that my main focus I'm really content.
+  </p>
+  <p>
+  I'm currently Interning at Agribots and that's been a lot of fun. I just want to learn as much as humanely possible so I can be of some use to making the world a better place.
+  </p>
+  </div>
   <div>
 	<ul>
-	    <li>  Lift </li>
+	    <li> Lift </li>
 	    <li> Eat   </li>
 	    <li> Repeat </li>
 	</ul>
    </div>
 
+
+
+  <div id="css-modal">
+
+  <a href="#openModal">Life Slideshow(Well sort of)</a>
+  <div id="openModal" class ="modalDialog">
+    <div>
+        <a href='#close' title="Close" class="close">X</a>
+        <h2> Modal Box </h2>
+          <div id="tutorial-test">
+  </pre>
+    <ul style="list-style-type: none; margin-left: -2em;">
+      <li id="1" class="hideable" style="display:block"><img src="img/fire.jpg" alt="Fire Trails" /></li>
+      <li id="2" class="hideable"> <img src="img/family.jpg" alt="Familia" /> </li>
+      <li id="3" class="hideable"> <img src="img/Soccer.jpeg" alt="Futbol" /> </li>
+      <li id="4" class="hideable"><img src="img/lana.jpg" alt="Lana" /></li>
+      <li id="5" class="hideable"><img src="img/courage.jpg" alt="Courage" /></li>
+      <li id="6" class="hideable"><img src="img/winning.jpg" alt="Shirt" /></li>
+    </ul>
+    Slide <!-- you can change "Slide" to Page, Item, etc. -->
+<span id="slideNumber">
+<script type="text/javascript">
+var elements = document.getElementsByClassName("hideable");
+var vis = getVisible(elements) + 1;
+document.write(vis);
+</script>
+</span>
+of <!-- Or use "/", as in Page 3/7 -->
+<script type="text/javascript">
+// Write the number of slides to HTML. Dynamically changes as you add or remove slides.
+document.write(document.getElementsByClassName("hideable").length);
+</script>
+</p>
+    <form>
+    <input type="button" value="First" onclick = "goToEdge(false)"/>
+    <input type="button" value="Back" onclick="toggleSlide(false)"/>
+    <input id="pauseButton" type = "button" value="Pause" onclick="toggleInterval()"/>
+    <input type="button" value="Forward" onclick="toggleSlide(true)"/>
+    <input type="button" value="Last" onclick ="goToEdge(true)"/>
+    </form>
+    
+</div>
+    </div>
+  </div>
+  </div>
+  <!--
+  <div id="bar-test"> 
+    <ul id="progress-list">
+      <li class="progress-square" id="box1"><a href="#" class="popper" data-popbox="pop1"> hi </a></li>
+      <li class="progress-square" id="box2"><a href="#" class="popper" data-popbox="pop2"> hi </a></li>
+      <li class="progress-square" id="box3"><a href="#" class="popper" data-popbox="pop3"> hi </a></li>
+      <li class="progress-square" id="box4"><a href="#" class="popper" data-popbox="pop4"> hi </a></li>
+    </ul>
+   </div>
+
+   <div>
+      <div class="tutorial-list" id="pop1"> <h6> Here's something interesting </h6> </div>
+      <div class="tutorial-list" id="pop2"> <h6> Here's something interesting </h6> </div>
+      <div class="tutorial-list" id="pop3"> <h6> Here's something interesting </h6> </div>
+      <div class="tutorial-list" id="pop4"> <h6> Here's something interesting </h6> </div>
+    </div>
+  <!--
+  <div id="tutorial-test">
+  </pre>
+    <ul style="list-style-type: none; margin-left: -2em;">
+      <li id="1" class="hideable" style="display:block"><img src="img/fire.jpg" alt="Fire Trails" /></li>
+      <li id="2" class="hideable"> <img src="img/family.jpg" alt="Familia" /> </li>
+      <li id="3" class="hideable"> <img src="img/Soccer.jpeg" alt="Futbol" /> </li>
+      <li id="4" class="hideable"><img src="img/lana.jpg" alt="Lana" /></li>
+      <li id="5" class="hideable"><img src="img/courage.jpg" alt="Courage" /></li>
+      <li id="6" class="hideable"><img src="img/winning.jpg" alt="Shirt" /></li>
+    </ul>
+    Slide < you can change "Slide" to Page, Item, etc. 
+<span id="slideNumber">
+<script type="text/javascript">
+var elements = document.getElementsByClassName("hideable");
+var vis = getVisible(elements) + 1;
+document.write(vis);
+</script>
+</span>
+of Or use "/", as in Page 3/7 
+<script type="text/javascript">
+// Write the number of slides to HTML. Dynamically changes as you add or remove slides.
+document.write(document.getElementsByClassName("hideable").length);
+</script>
+</p>
+    <form>
+    <input type="button" value="First" onclick = "goToEdge(false)"/>
+    <input type="button" value="Back" onclick="toggleSlide(false)"/>
+    <input id="pauseButton" type = "button" value="Pause" onclick="toggleInterval()"/>
+    <input type="button" value="Forward" onclick="toggleSlide(true)"/>
+    <input type="button" value="Last" onclick ="goToEdge(true)"/>
+    </form>
+    
+</div>
+-->
    <!-- Trigger the modal with a button button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"-->
 <h4> There really isn't much fun here, I just wanted to test some functionality differences when on mobile </h4>
 <button type="button" id="mod_butt" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">CLICK ME PLS</button>
@@ -121,22 +234,22 @@
                   <h3>  Feel Free To Peek Into my Personal Life Here </h3>
 
 
-              <ul>
-                    <li><a href="https://www.linkedin.com/pub/alejandro-garcia-paredes/91/518/8a5" class="btn btn-social-icon btn-lg btn-linkedin">
+              <ul id="social-life">
+                    <li id="social-life"><a href="https://www.linkedin.com/pub/alejandro-garcia-paredes/91/518/8a5" class="btn btn-social-icon btn-lg btn-linkedin">
                       <i class="fa fa-linkedin">
                       </i></a></li>
-                    <li><a href="https://github.com/alegarpa" class="btn btn-social-icon btn-lg btn-github">
+                    <li id="social-life"><a href="https://github.com/alegarpa" class="btn btn-social-icon btn-lg btn-github">
                       <i class="fa fa-github">
                       </i> </a>
                     </li>
-                    <li><a href="https://bitbucket.org/alegarpa/" class="btn btn-social-icon btn-lg btn-bitbucket">
+                    <li id="social-life"><a href="https://bitbucket.org/alegarpa/" class="btn btn-social-icon btn-lg btn-bitbucket">
                       <i class="fa fa-bitbucket">
                       </i> </a>
                     </li>  
-                    <li><a href="https://www.facebook.com/profile.php?id=1349149627" class="btn btn-social-icon btn-lg btn-facebook">
+                    <li id="social-life"><a href="https://www.facebook.com/profile.php?id=1349149627" class="btn btn-social-icon btn-lg btn-facebook">
                       <i class="fa fa-facebook">
                       </i></a></li>
-                    <li><a href="https://www.instagram.com/alejanbro6969/" class="btn btn-social-icon btn-lg btn-instagram">
+                    <li id="social-life"><a href="https://www.instagram.com/alejanbro6969/" class="btn btn-social-icon btn-lg btn-instagram">
                       <i class="fa fa-instagram">
                       </i>
                     </a></li>
