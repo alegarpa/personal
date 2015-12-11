@@ -52,17 +52,17 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#"> About </a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Professional</a></li>
+        <li><a href="about.html"> About </a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="professional.html">Professional</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Interest <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#"> Music </a></li>
-            <li><a href="#"> Sports </a></li>
-            <li><a href="#"> Misc </a></li>
+            <li><a href="music.html"> Music </a></li>
+            <li><a href="sports.html"> Sports </a></li>
+            <li><a href="misc.html"> Misc </a></li>
           </ul>
         </li>
       </ul>
@@ -137,22 +137,43 @@ document.write(document.getElementsByClassName("hideable").length);
     </div>
   </div>
   </div>
-  <!--
-  <div id="bar-test"> 
-    <ul id="progress-list">
-      <li class="progress-square" id="box1"><a href="#" class="popper" data-popbox="pop1"> hi </a></li>
-      <li class="progress-square" id="box2"><a href="#" class="popper" data-popbox="pop2"> hi </a></li>
-      <li class="progress-square" id="box3"><a href="#" class="popper" data-popbox="pop3"> hi </a></li>
-      <li class="progress-square" id="box4"><a href="#" class="popper" data-popbox="pop4"> hi </a></li>
+
+ <div id="css-modal">
+
+  <a href="#newModal">Tutorial Modal ^.^ (This took me longer than it should have)</a>
+  <div id="newModal" class ="modalDialog">
+    <div>
+        <a href='#close' title="Close" class="close">X</a>
+        <h2> Click some buttons yo!</h2>
+          <div id="button-tutorial-test">
+
+  <ul style="list-style-type: none; margin-left: -2em;">
+    <li id="slide1" class="tutorial" style="display:block"><img src="img/fire.jpg" alt="Fire Trails" /> <p> This is from that one time I ran up the trails :) </p></li>
+     <li id="slide2" class="tutorial"> <img src="img/family.jpg" alt="Familia" />  <p> This is from that one time I ran up the trails :) </p> </li>
+     <li id="slide3" class="tutorial"> <img src="img/Soccer.jpeg" alt="Futbol" />  <p> This is from that one time I ran up the trails :) </p> </li>
+     <li id="slide4" class="tutorial"><img src="img/lana.jpg" alt="Lana" />  <p> This is from that one time I ran up the trails :) </p> </li>
+  </ul>
+
+
+  <div id="bar-test">
+   <ul id="progress-list">
+      <li class="tutorial-bars"><!--<a  id="box1" class="btn-blue popper" href="" onclick="goToPoint(0)" data-popbox="pop1"></a>-->  <input id="box1" class="currBtn popper" type="button" value="" onclick = "goToPoint(0)" data-popbox="pop1"/></li>
+      <li class="tutorial-bars"> <input id="box2" class="btn-blue popper" type="button" value="" onclick = "goToPoint(1)" data-popbox="pop2"/></li>
+      <li class="tutorial-bars"><input id="box3" class="btn-blue popper" type="button" value="" onclick="goToPoint(2)" data-popbox="pop3"></li>
+      <li class="tutorial-bars"><input id="box4" class="btn-blue popper" type="button" value="" onclick="goToPoint(3)" data-popbox="pop4"></li>
     </ul>
    </div>
 
    <div>
       <div class="tutorial-list" id="pop1"> <h6> Here's something interesting </h6> </div>
-      <div class="tutorial-list" id="pop2"> <h6> Here's something interesting </h6> </div>
-      <div class="tutorial-list" id="pop3"> <h6> Here's something interesting </h6> </div>
-      <div class="tutorial-list" id="pop4"> <h6> Here's something interesting </h6> </div>
+      <div class="tutorial-list" id="pop2"> <h6> Hnot again </h6> </div>
+      <div class="tutorial-list" id="pop3"> <h6> here we go </h6> </div>
+      <div class="tutorial-list" id="pop4"> <h6> Look </h6> </div>
     </div>
+    </div>
+  </div>
+</div>
+</div>
   <!--
   <div id="tutorial-test">
   </pre>

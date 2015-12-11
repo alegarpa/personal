@@ -1,5 +1,7 @@
 	var interval = 5000;
+	var tutInterval = 10000;
 	var switching = setInterval("toggleSlide(true)", interval);
+	var tutSwitch = setInterval("toggleTutorial(true)", tutInterval);
 	window.paused = false;
 
 
@@ -38,6 +40,41 @@
 		sn.innerHTML = (makeVisible + 1);
 
 	}
+
+
+	function toggleTutorial(direction) {
+		var elements = document.getElementsByClassName("tutorial");
+		var barElements = document.getElementsByClassName("popper");
+		var visibleID = getVisible(elements);
+		elements[visibleID].style.display = "none";
+		barElements[visibleID].className = barElements[visibleID].className.replace( /(?:^|\s)currBtn(?!\S)/g , '' );
+		barElements[visibleID].className += " btn-blue";
+		if(!direction) {
+			var makeVisible = prev(visibleID, elements.length);
+		}
+		else{
+			var makeVisible = next(visibleID, elements.length);
+		}
+		barElements[makeVisible].className = barElements[visibleID].className.replace( /(?:^|\s)btn-blue(?!\S)/g , '' );
+		barElements[makeVisible].className += " currBtn";
+		elements[makeVisible].style.display = "block";
+
+
+	}
+
+	function getOrangeBars(elements) {
+		var visibleID = -1;
+		for(var i=0; i<elements.length; i++) {
+			if(elements[i].className.match(/(?:^|\s)currBtn(?!\S)/) ){
+				getVisible = i;
+				console.log(getVisible);
+				console.log("Hey am I doing something?");
+			}
+		}
+		return visibleID;
+	}
+
+
 	//grab the current visible list item
 	function getVisible(elements) {
 		var visibleID = -1;
@@ -65,6 +102,14 @@
 		else{
 			return num+1;
 		}
+	}
+
+
+	function goToPoint(num) {
+		var elements = document.getElementsByClassName("tutorial");
+		var visibleID = getVisible(elements);
+		elements[visibleID].style.display = "none";
+		elements[num].style.display = "block";
 	}
 
 	function goToEdge(where) {
@@ -105,8 +150,8 @@ $(document).ready(function() {
 			$("#hey_there_everyone").show();
 		});
 	}
-	/**this should add an active class**/
-	$('ul#progess-list').click(function() {
+	/**this should add an active class*
+	$('#progess-list').click(function() {
 		$('ul#progess-list li').removeClass("progress-square");
 		$('ul#progess-list li').css('background-color', 'none');
 		$(this).css('background-color', "#FF9900")
@@ -120,7 +165,7 @@ $(document).ready(function() {
 
 	$('li.progress-square currBlock')**/
 	/** HERE WE GO TIME TO MAKE OUT PROGRESS BAR NUKKAS :DDDDDDDDDDDDDDd**/
-	$('a.popper').hover(function(e) {
+	$('#box1, #box2, #box3, #box4').hover(function (e) {
 		var target = '#' + ($(this).attr('data-popbox'));
 		$(target).show();
 		moveLeft = $(this).outerWidth();
@@ -133,7 +178,7 @@ $(document).ready(function() {
 	});
 
 	/** Currently hovering opens up the same div for all **/
-	$('a.popper').mousemove(function (e) {
+	$('#box1, #box2, #box3, #box4').mousemove(function (e) {
 	 var target = '#' + ($(this).attr('data-popbox'));
 	 leftD = e.pageX + parseInt(moveLeft);
    	 maxRight = leftD + $(target).outerWidth();
@@ -156,6 +201,120 @@ $(document).ready(function() {
     }
 
     $(target).css('top', topD).css('left', leftD);
+	});
+
+	/** I realize I ca fix this another way. I'm violating DRY **/
+    $('#box1, #box2, #box3, #box4').on('click', function () {
+    	/**click: function() {
+    		if($(this).is('#box1')) {
+				$(this).toggleClass("btn-blue");
+				$(this).toggleClass("currBtn");
+			}
+			else if($(this).is('#box2')) {
+				$(this).toggleClass("btn-blue");
+				$(this).toggleClass("currBtn");
+
+			}**/
+
+			var $curr = $(this);
+			$(this).toggleClass("btn-blue");
+			$(this).toggleClass("currBtn");
+			var arr = $(this).siblings();
+			console.log($curr.hasClass("currBtn"));
+			$(".popper").each(function () {
+				if($(this).is($curr)) {
+					console.log("hi I'm ok");
+				}
+				else{
+					if($(this).hasClass("currBtn")){
+						console.log("time to be removed");
+						$(this).removeClass("currBtn");
+						$(this).addClass("btn-blue");
+					}
+					else{
+						console.log("well guess I'm blue");
+					}
+				}
+
+			})
+			/**console.log($(this).find('btn-blue').length);
+			$.each(arr, function() {
+				console.log("Am I in yet");
+				if($(this).hasClass("currBtn")) {
+					window.console.log("hello");
+					$(this).removeClass('currBtn');
+					$(this).addClass('btn-blue');
+				}
+			});**/
+
+
+			/**
+			if($(this).is('#box1')) {
+				if($('#box2').hasClass("currBtn")){			
+					$(this).toggleClass("currBtn");
+					$(this).toggleClass("btn-blue");
+				}
+				else if($('#box3').hasClass("currBtn")){
+					$(this).toggleClass("currBtn");
+					$(this).toggleClass("btn-blue");
+				}
+				else if($('#box4').hasClass("currBtn")){
+					$(this).toggleClass("currBtn");
+					$(this).toggleClass("btn-blue");
+				}
+
+			}
+			else if($(this).is('#box2')){
+				if($('#box1').hasClass("currBtn")){
+					$(this).toggleClass("currBtn");
+					
+				}
+				else if($('#box3').hasClass("currBtn")){
+					$(this).toggleClass("currBtn");
+					
+				}
+				else if($('#box4').hasClass("currBtn")){
+					$(this).toggleClass("currBtn");
+					
+				}
+
+			}
+			else if($(this).is('#box3')){
+				if($('#box1').hasClass("currBtn")){
+					
+					$(this).toggleClass("currBtn");
+					$(this).toggleClass("btn-blue");
+				}
+				else if($('#box2').hasClass("currBtn")){
+					
+					$(this).toggleClass("currBtn");
+					$(this).toggleClass("btn-blue");
+				}
+				else if($('#box4').hasClass("currBtn")){
+					$(this).toggleClass("btn-blue");
+					$(this).toggleClass("currBtn");
+					$(this).toggleClass("btn-blue");
+				}
+
+			}
+			else if($(this).is('#box4')){
+				if($('#box1').hasClass("currBtn")){
+					
+					$(this).toggleClass("currBtn");
+					$(this).toggleClass("btn-blue");
+				}
+				else if($('#box2').hasClass("currBtn")){
+					
+					$(this).toggleClass("currBtn");
+					$(this).toggleClass("btn-blue");
+				}
+				else if($('#box3').hasClass("currBtn")){
+					
+					$(this).toggleClass("currBtn");
+					$(this).toggleClass("btn-blue");
+				}
+
+			}**/
 	});
 
 
