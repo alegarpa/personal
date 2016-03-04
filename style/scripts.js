@@ -11,7 +11,7 @@
 
 
 
-	/**For the current carosuel **/
+	/**For the current carosuel but I won't use this for the buttons **/
 	function toggleInterval() {
 		var button = document.getElementById("pauseButton");
 		if(!window.paused)  {
@@ -25,6 +25,7 @@
 		window.paused = !(window.paused);
 	}
 
+	/** this is for the basic next and prev slide thing **/
 	function toggleSlide(direction) {
 		var elements = document.getElementsByClassName("hideable"); //grab all hideble elements
 		var visibleID = getVisible(elements); //grab the current id number of the visible item
@@ -41,7 +42,7 @@
 
 	}
 
-
+	/** this is for the bars and changing things concurrently **/
 	function toggleTutorial(direction) {
 		var elements = document.getElementsByClassName("tutorial");
 		var barElements = document.getElementsByClassName("popper");
@@ -61,7 +62,7 @@
 
 
 	}
-
+/** might not be necessary **/
 	function getOrangeBars(elements) {
 		var visibleID = -1;
 		for(var i=0; i<elements.length; i++) {
@@ -75,7 +76,7 @@
 	}
 
 
-	//grab the current visible list item
+	//grab the current visible list item out of our elements
 	function getVisible(elements) {
 		var visibleID = -1;
 		for(var i = 0; i<elements.length; i++) {
@@ -105,6 +106,7 @@
 	}
 
 
+	/** goes to the disegnated clicking point **/
 	function goToPoint(num) {
 		var elements = document.getElementsByClassName("tutorial");
 		var visibleID = getVisible(elements);
@@ -112,6 +114,7 @@
 		elements[num].style.display = "block";
 	}
 
+	/** when clicking first or last I go to the end of anything **/
 	function goToEdge(where) {
 		var elements = document.getElementsByClassName("hideable");
 		var visibleID = getVisible(elements);
@@ -135,8 +138,7 @@ $(document).ready(function() {
 
 
 
-
-
+	/** check so see if I'm mobile **/
 	var isMobile = false;
 	var moveLeft = 0;
 	var moveDown =0;
@@ -163,8 +165,7 @@ $(document).ready(function() {
 		$(this).css("color", "#FF9900")
 	});
 
-	$('li.progress-square currBlock')**/
-	/** HERE WE GO TIME TO MAKE OUT PROGRESS BAR NUKKAS :DDDDDDDDDDDDDDd**/
+	/** allows us to see things on out hover **/
 	$('#box1, #box2, #box3, #box4').hover(function (e) {
 		var target = '#' + ($(this).attr('data-popbox'));
 		$(target).show();
@@ -177,7 +178,7 @@ $(document).ready(function() {
     	}
 	});
 
-	/** Currently hovering opens up the same div for all **/
+	/** makes a bubble pop up per div well I need to make the bubble **/
 	$('#box1, #box2, #box3, #box4').mousemove(function (e) {
 	 var target = '#' + ($(this).attr('data-popbox'));
 	 leftD = e.pageX + parseInt(moveLeft);

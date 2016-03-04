@@ -16,6 +16,14 @@ ul#social-life {
     
 } 
 
+h2 {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+}
+
 ul#progress-list {
 	list-style-type: none;
 	margin: auto;
@@ -30,6 +38,13 @@ ul#progress-list > li {
 .tutorial-container {
 }
 
+div.mobile_test {
+	text-align: center;
+}
+
+body {
+	text-align: center;
+}
 .btn-blue {
    overflow: hidden;
   -webkit-border-radius: 0;
