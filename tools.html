@@ -40,9 +40,129 @@
 
     </head>
     <body>
+
+
     <div id="header"> </div>
 
-    <h3> WOOOOOOOOOOOOO WHERE WHO WHY </h3>
+    <h3>  By the end of next week I'll have the modals set up with images that tell you how to build that modal </h3>
+
+
+    <h4>  I'll fill these pictures of myself with pictures of how you'd fill out these squares, but this allows you to iterate through a set of pictures and information. </h4>
+
+
+    <!-- simple Tutorial -->
+    <div id="css-modal">
+
+        <a href="#openModal">Life Slideshow(Well sort of)</a>
+        <div id="openModal" class ="modalDialog">
+          <div>
+              <a href='#close' title="Close" class="close">X</a>
+              <h2> Simple Slideshow </h2>
+                <div id="tutorial-test">
+              </pre>
+              <ul style="list-style-type: none; margin-left: -2em;">
+              <li id="1" class="hideable" style="display:block"><img src="img/fire.jpg" alt="Fire Trails" /></li>
+              <li id="2" class="hideable"> <img src="img/family.jpg" alt="Familia" /> </li>
+              <li id="3" class="hideable"> <img src="img/Soccer.jpeg" alt="Futbol" /> </li>
+              <li id="4" class="hideable"><img src="img/lana.jpg" alt="Lana" /></li>
+              <li id="5" class="hideable"><img src="img/courage.jpg" alt="Courage" /></li>
+              <li id="6" class="hideable"><img src="img/winning.jpg" alt="Shirt" /></li>
+            </ul>
+            Slide <!-- you can change "Slide" to Page, Item, etc. -->
+        <span id="slideNumber">
+        <script type="text/javascript">
+        var elements = document.getElementsByClassName("hideable");
+        var vis = getVisible(elements) + 1;
+        document.write(vis);
+        </script>
+        </span>
+        of <!-- Or use "/", as in Page 3/7 -->
+        <script type="text/javascript">
+        // Write the number of slides to HTML. Dynamically changes as you add or remove slides.
+         document.write(document.getElementsByClassName("hideable").length);
+        </script>
+        </p>
+            <form>
+              <input type="button" value="First" onclick = "goToEdge(false)"/>
+              <input type="button" value="Back" onclick="toggleSlide(false)"/>
+              <input id="pauseButton" type = "button" value="Pause" onclick="toggleInterval()"/>
+              <input type="button" value="Forward" onclick="toggleSlide(true)"/>
+              <input type="button" value="Last" onclick ="goToEdge(true)"/>
+            </form>
+          
+        </div>
+      </div>
+    </div>
+
+
+    <h4> The buttons are a little ugly but I wanted to make a tutorial modal where the boxes highlighted depending on the screen you're on. When you hover over a tile it gives a small description of what the tile holds. </h4>
+
+
+     <div id="css-modal">
+
+      <a href="#newModal">Tutorial Modal ^.^ (This took me longer than it should have)</a>
+      <div id="newModal" class ="modalDialog">
+        <div>
+            <a href='#close' title="Close" class="close">X</a>
+            <h2> Click some buttons yo!</h2>
+              <div id="button-tutorial-test">
+
+        <ul style="list-style-type: none; margin-left: -2em;">
+          <li id="slide1" class="tutorial" style="display:block"><img src="img/fire.jpg" alt="Fire Trails" /> <p> This is from that one time I ran up the trails :) </p></li>
+           <li id="slide2" class="tutorial"> <img src="img/family.jpg" alt="Familia" />  <p> Here's the family </p> </li>
+          <li id="slide3" class="tutorial"> <img src="img/Soccer.jpeg" alt="Futbol" />  <p> Here's the other junk </p> </li>
+          <li id="slide4" class="tutorial"><img src="img/lana.jpg" alt="Lana" />  <p> Lana is kinda spoiled </p> </li>
+        </ul>
+
+
+        <div id="bar-test">
+        <ul id="progress-list">
+            <li class="tutorial-bars"><!--<a  id="box1" class="btn-blue popper" href="" onclick="goToPoint(0)" data-popbox="pop1"></a>-->  <input id="box1" class="currBtn popper" type="button" value="" onclick = "goToPoint(0)" data-popbox="pop1"/></li>
+            <li class="tutorial-bars"> <input id="box2" class="btn-blue popper" type="button" value="" onclick = "goToPoint(1)" data-popbox="pop2"/></li>
+            <li class="tutorial-bars"><input id="box3" class="btn-blue popper" type="button" value="" onclick="goToPoint(2)" data-popbox="pop3"></li>
+            <li class="tutorial-bars"><input id="box4" class="btn-blue popper" type="button" value="" onclick="goToPoint(3)" data-popbox="pop4"></li>
+          </ul>
+        </div>
+
+        <div>
+            <div class="tutorial-list" id="pop1"> <h6> Here's something interesting </h6> </div>
+            <div class="tutorial-list" id="pop2"> <h6> Not again </h6> </div>
+            <div class="tutorial-list" id="pop3"> <h6> Here we go </h6> </div>
+            <div class="tutorial-list" id="pop4"> <h6> Look </h6> </div>
+        </div>
+        </div>
+      </div>
+     </div>
+    </div>
+
+
+      <hr>
+       <div class="footer">
+                  <h3>  Feel Free To Peek Into my Personal Life Here </h3>
+
+
+              <ul id="social-life">
+                    <li id="social-life"><a href="https://www.linkedin.com/pub/alejandro-garcia-paredes/91/518/8a5" class="btn btn-social-icon btn-lg btn-linkedin">
+                      <i class="fa fa-linkedin">
+                      </i></a></li>
+                    <li id="social-life"><a href="https://github.com/alegarpa" class="btn btn-social-icon btn-lg btn-github">
+                      <i class="fa fa-github">
+                      </i> </a>
+                    </li>
+                    <li id="social-life"><a href="https://bitbucket.org/alegarpa/" class="btn btn-social-icon btn-lg btn-bitbucket">
+                      <i class="fa fa-bitbucket">
+                      </i> </a>
+                    </li>  
+                    <li id="social-life"><a href="https://www.facebook.com/profile.php?id=1349149627" class="btn btn-social-icon btn-lg btn-facebook">
+                      <i class="fa fa-facebook">
+                      </i></a></li>
+                    <li id="social-life"><a href="https://www.instagram.com/alejanbro6969/" class="btn btn-social-icon btn-lg btn-instagram">
+                      <i class="fa fa-instagram">
+                      </i>
+                    </a></li>
+                    
+                  </ul>
+     </div>
 
     </body>
     </html>
