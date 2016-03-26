@@ -10,6 +10,16 @@ img {
 	height: 480px;
 }
 
+div.post {
+	border: 1px red;
+	padding-top: 50px;
+	padding-right: 100px;
+	padding-bottom: 50px;
+	padding-left: 100px;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
 ul#social-life {
     list-style-type: none;
     margin: auto;
